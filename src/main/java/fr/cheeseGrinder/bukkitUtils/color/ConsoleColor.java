@@ -1,4 +1,4 @@
-package fr.cheesegrinder.bukkitUtils.color;
+package fr.cheeseGrinder.bukkitUtils.color;
 
 public class ConsoleColor {
     // Reset

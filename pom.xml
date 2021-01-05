@@ -6,7 +6,7 @@
 
     <groupId>fr.CheeseGrinder</groupId>
     <artifactId>bukkit-utils</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>Bukkit-utils</name>
