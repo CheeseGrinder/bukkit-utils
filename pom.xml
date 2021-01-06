@@ -6,10 +6,33 @@
 
     <groupId>fr.CheeseGrinder</groupId>
     <artifactId>bukkit-utils</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>Bukkit-utils</name>
+    <description>Util class for Minecraft Bukkit plugin development</description>
+    <url>https://github.com/CheeseGrinder/bukkit-utils</url>
+
+    <licenses>
+        <license>
+            <name>GNU GPL version 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://svn.apache.org/viewvc/maven</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>CheeseGrinder</name>
+            <email>devs.cheese@gmail.com</email>
+            <organization>com.github.cheesegrinder</organization>
+            <organizationUrl>https://github.com/CheeseGrinder</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.8</java.version>
@@ -22,45 +45,11 @@
         <repository>
             <id>github</id>
             <name>GitHub CheeseGrinder Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/CheeseGrinder/bukkit-utils</url>
+            <url>https://maven.pkg.github.com/CheeseGrinder/packages</url>
         </repository>
     </distributionManagement>
 
-    <developers>
-        <developer>
-            <name>CheeseGrinder</name>
-            <email>devs.cheese@gmail.com</email>
-            <organization>com.github.cheesegrinder</organization>
-            <organizationUrl>https://github.com/CheeseGrinder</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/CheeseGrinder/bukkit-utils.git</connection>
-        <developerConnection>scm:git:https://github.com/CheeseGrinder/bukkit-utils.git</developerConnection>
-        <url>https://github.com/CheeseGrinder/bukkit-utils</url>
-        <tag>bukkit-utils</tag>
-    </scm>
-
     <build>
-	<pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.9.1</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
