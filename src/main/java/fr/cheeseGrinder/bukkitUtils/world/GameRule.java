@@ -1,4 +1,4 @@
-package fr.cheeseGrinder.bukkitUtils;
+package fr.cheeseGrinder.bukkitUtils.world;
 
 public class GameRule {
     
