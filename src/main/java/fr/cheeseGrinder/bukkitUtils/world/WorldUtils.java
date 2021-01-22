@@ -1,7 +1,9 @@
 package fr.cheeseGrinder.bukkitUtils.world;
 
 import fr.cheeseGrinder.bukkitUtils.color.ConsoleColor;
+import fr.cheeseGrinder.bukkitUtils.color.MotdColor;
 import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.entity.Creature;
@@ -60,14 +62,13 @@ public class WorldUtils {
      * @see #unload()
      */
     public boolean delete() {
-        if (!exist()) return false;
+        if (notExist()) return false;
+        if (isNotLoad()) return false;
 
-        if (unload()) {
-            logger.info(ConsoleColor.GREEN + "world '" + name + "' has been deleted" + ConsoleColor.RESET);
-            delete(new File(name));
-            return true;
-        }
-        return false;
+        unload(false);
+        logger.info(ConsoleColor.GREEN + "world '" + name + "' has been deleted" + ConsoleColor.RESET);
+        delete(new File(name));
+        return true;
     }
 
     /**
@@ -106,7 +107,7 @@ public class WorldUtils {
      * @see #isNotLoad()
      */
     public boolean save() {
-        if (!exist()) {
+        if (notExist()) {
             logger.severe(ConsoleColor.RED + "Can't save world '" + name + "' because it doesn't exist" + ConsoleColor.RESET);
             return false;
         }
@@ -217,7 +218,7 @@ public class WorldUtils {
      * @see #isLoad()
      */
     public boolean load() {
-        if (!exist()) {
+        if (notExist()) {
             logger.severe(ConsoleColor.RED + "Can't load world '" + name + "' because it doesn't exist" + ConsoleColor.RESET);
             return false;
         }
@@ -264,13 +265,16 @@ public class WorldUtils {
      * @see #isLoad()
      */
     public boolean unload(boolean save) {
-        if (!exist()) {
+        if (notExist()) {
             logger.severe(ConsoleColor.RED + "Can't unload world '" + name + "' because it doesn't exist" + ConsoleColor.RESET);
             return false;
         }
-        if (!isLoad()) {
+        if (isNotLoad()) {
             logger.severe(ConsoleColor.RED + "Can't unload world '" + name + "' because it already unload" + ConsoleColor.RESET);
             return false;
+        }
+        for (Chunk chunk : Bukkit.getWorld(name).getLoadedChunks()) {
+            chunk.unload(save);
         }
 
         return Bukkit.unloadWorld(name, save);
