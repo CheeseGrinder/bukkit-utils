@@ -1,4 +1,8 @@
-# bukkit-utils
+# Bukkit-utils
+
+# Status
+
+[![Build Java with Maven](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven.yml/badge.svg)](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven.yml)
 
 # TESTED
 - ❌ - 1.8
