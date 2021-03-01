@@ -4,6 +4,8 @@
 
 [![Build Java with Maven](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven.yml/badge.svg)](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven.yml)
 
+[![Maven Publish](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/CheeseGrinder/bukkit-utils/actions/workflows/maven-publish.yml)
+
 # TESTED
 - ❌ - 1.8
 - ❌ - 1.9
